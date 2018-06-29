@@ -22,14 +22,14 @@ class Fighter {
         enemy.damaged(this.attackPower)
         this.attackPower += this.baseAttackPower;
         if (this.attackRevealer != null)
-            this.attackRevealer.text(this.attackPower);
+            this.attackRevealer.text("Current Attack <br>" +this.attackPower);
     }
     damaged(int) 
     {
         this.healthPoints -= int;
         if (this.hpRevealer != null)
         {
-            this.hpRevealer.text(this.healthPoints)
+            this.hpRevealer.text("Current Hp <br>" +this.healthPoints)
         }
         if(player == this && this.healthPoints<= 0)
         {
