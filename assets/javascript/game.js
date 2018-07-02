@@ -4,8 +4,10 @@ var fArray = new Array();
 var waitArea = $("#waitarea");
 var foesRemaining=0;
 
-class Fighter {
-    constructor(attack, hp, name) {
+class Fighter 
+{
+    constructor(attack, hp, name) 
+    {
         this.baseAttackPower = attack;
         this.attackPower = attack;
         this.counterPower = attack +10;
@@ -91,7 +93,6 @@ function setFighterIcons() {
     fArray.forEach(function (e, i) {
         //bringing in an image of our fighter
         fighterImage = $("<img>").attr("src", "assets/images/Fighter" + i + ".png");
-        fighterImage.attr("data-fighter-index", i)
 
         //putting up a div to hold everything
         fighterDiv = $("<div>").attr("id", e.name).addClass("text-center")
