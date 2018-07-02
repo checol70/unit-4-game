@@ -17,19 +17,23 @@ class Fighter {
         fArray.push(this);
         console.log("fighter added: " + this.name)
     }
-    attack(enemy) {
-        console.log("ATACK!!!")
-        enemy.damaged(this.attackPower)
-        this.attackPower += this.baseAttackPower;
-        if (this.attackRevealer != null)
-            this.attackRevealer.text("Current Attack <br>" +this.attackPower);
+    attack(enemy) 
+    {
+        if(this.healthPoints>0)
+        {
+            console.log("ATACK!!!")
+            enemy.damaged(this.attackPower)
+            this.attackPower += this.baseAttackPower;
+            if (this.attackRevealer != null)
+                this.attackRevealer.html("Current Attack <br>" +this.attackPower);
+        }
     }
     damaged(int) 
     {
         this.healthPoints -= int;
         if (this.hpRevealer != null)
         {
-            this.hpRevealer.text("Current Hp <br>" +this.healthPoints)
+            this.hpRevealer.html("Current Hp <br>" +this.healthPoints)
         }
         if(player == this && this.healthPoints<= 0)
         {
@@ -76,8 +80,8 @@ addFighters();
 function addFighters() {
     fighterA = new Fighter(10, 100, "Beat Stick");
     fighterB = new Fighter(25, 50, "Bow Chick");
-    fighterC = new Fighter(5, 200, "Knight Guy")
-    fighterD = new Fighter(20, 75, "Mage Dude")
+    fighterC = new Fighter(5, 175, "Knight Guy");
+    fighterD = new Fighter(20, 75, "Mage Dude");
     setFighterIcons();
     foesRemaining = fArray.length -1;
 
@@ -96,14 +100,14 @@ function setFighterIcons() {
         })
         e.myDiv = fighterDiv;
         $("#waitarea").append(fighterDiv);
-        fighterDiv.addClass("col-3");
+        fighterDiv.addClass("col-3 text-center align-middle");
         fighterImage.height("150px")
 
         //this area for showing data
         fighterDiv.append(fighterImage);
-        fighterDiv.append("<p>" + e.name + "</p>");
-        e.hpRevealer = $("<p>Current Hp <br>" + e.healthPoints + "</p>");
-        e.attackRevealer = $("<p>Current Attack <br>" + e.attackPower + "</p>");
+        fighterDiv.append("<p class='stat'>" + e.name + "</p>");
+        e.hpRevealer = $("<p class='stat'>Current Hp <br>" + e.healthPoints + "</p>");
+        e.attackRevealer = $("<p class='stat'>Current Attack <br>" + e.attackPower + "</p>");
         fighterDiv.append(e.hpRevealer);
         fighterDiv.append(e.attackRevealer);
     })
@@ -120,6 +124,7 @@ function assignPlayer(e) {
         defender = e;
         $("#defenderarea").append(defender.myDiv);
     }
+    e.myDiv.removeClass("col-3")
 }
 function attBtnPressed() {
     console.log("attBtnPressed")

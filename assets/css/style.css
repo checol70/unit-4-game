@@ -1,0 +1,63 @@
+.win-lose{
+    position: fixed;
+    top:45%;
+    z-index: 10;
+    width: 500px;
+    margin:0 auto;
+    left: 35%;
+}
+.stat{
+    background-color: white;
+    max-width: 105px;
+    margin: 10px auto;
+}
+.min-height{
+    min-height: 320px;
+}
+#waitarea{
+    background: gray;
+}
+#playerarea{
+    background-color:lightblue;
+}
+#defenderarea{
+    background-color:lightsalmon;
+}
+#att-btn{
+    position:relative;
+    z-index: 9;
+    bottom: 150px;
+    left:46%;
+}
+.huge-text{
+    font-family: 'Permanent Marker', cursive;
+    color:yellow;
+    
+    font-size: 100px;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+.vs{
+    z-index: 8;
+    position: relative;
+    bottom:250px;
+    font-family: 'Permanent Marker', cursive;
+    color:yellow;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+     background: url("../images/background\ smear.png");
+     background-repeat: no-repeat;
+     background-size: 90px 100px;
+     background-position: center center;
+}
+.back{
+    z-index: 7;
+    position: relative;
+    bottom:250px;
+}
